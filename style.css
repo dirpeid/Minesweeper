@@ -1,0 +1,102 @@
+body{
+    background-color: hsl(136, 91%, 13%);
+    animation: changingBackground 60s infinite;
+}
+body.die{
+    animation: shake 0.5s ease;
+}
+@keyframes shake {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-6px); }
+    40%  { transform: translateX(6px); }
+    60%  { transform: translateX(-4px); }
+    80%  { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+@keyframes changingBackground{
+    0% {background-color: hsl(140, 60%, 22%);}
+    20% {background-color: hsl(165, 60%, 20%);}
+    40% {background-color: hsl(190, 65%, 20%);}
+    60% {background-color: hsl(215, 70%, 22%);}
+    80% {background-color: hsl(240, 65%, 24%);}
+    100% {background-color: hsl(140, 60%, 22%);}
+}
+h3,p,output,h2{
+    color: aliceblue;
+}
+#gameplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+#cheatbtn{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+#resetbtn{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+}
+#densitySlider{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+}
+#densityOutput{
+    position: fixed;
+    top: 25px;
+    right: 5px;
+}
+#sideSlider{
+    position: fixed;
+    top: 45px;
+    right: 25px;
+}
+#sideOutput{
+    position: fixed;
+    top: 45px;
+    right: 5px;
+}
+#board{
+    display: grid;
+    grid-auto-rows: 1fr;
+    width: 90vmin;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    border: 5px black solid;
+}
+#gameover{
+    position: fixed;
+    top: 30vh;
+    left: 1vw;
+    font-size: 5vmin;
+}
+.tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 1px black solid;
+    background-color: rgb(61, 156, 104);
+    cursor: pointer;
+}
+.tile:nth-child(2n){
+    background-color: rgb(51, 179, 115);
+}
+.tile.uncovered{
+    background-color: rgb(156, 156, 156);
+}
+.tile.uncovered:nth-child(2n){
+    background-color: rgb(190, 190, 190);
+}
+.tile:hover{
+    box-shadow: 0 0 10px black;
+    transform: scale(1.1);
+}
+.tile:active{
+    transform: scale(1.2);
+}
